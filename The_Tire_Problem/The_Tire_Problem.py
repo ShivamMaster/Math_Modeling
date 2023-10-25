@@ -66,9 +66,26 @@ for number in range(1, 40001):
     probability = calculate_probability(mean, std_dev, number)
     probabilities.append(probability)
 
-# Printing the probabilities for numbers 1 to 40000
+
+def cost(number):
+    return (probability * 100 * calculate_result(number))
+
+
+# Printing for numbers 1 to 40000
 print("Probabilities:")
 for number, probability in enumerate(probabilities, start=1):
-    print(f"Number: {number}, Probability: {probability}, Refund {calculate_result(number)}")
+    print(f"Number: {number}, Probability: {probability * 100}, Refund {calculate_result(number)}, Cost {cost(number)}")
     
-    
+
+# all_costs = []
+# for number, probability in enumerate(probabilities, start=1):
+#     all_costs.append(cost(number))
+
+# print("Total number of costs:", len(all_costs))
+
+total_cost = 0
+for number, probability in enumerate(probabilities, start=1):
+  cost_amount = cost(number)
+  total_cost += cost_amount
+
+print(total_cost)
