@@ -43,17 +43,7 @@ std_dev = 8600
 # print(f"The probability of the number {number} on the bell curve is {probability}.")
 
 # Calculating the probabilities for numbers 1 to 40000
-probabilities = []
-for number in range(1, 40001):
-    probability = calculate_probability(mean, std_dev, number)
-    probabilities.append(probability)
 
-# Printing the probabilities for numbers 1 to 40000
-print("Probabilities:")
-for number, probability in enumerate(probabilities, start=1):
-    print(f"Number: {number}, Probability: {probability}")
-    
-    
     
     
 # Refund Amount
@@ -67,6 +57,18 @@ for number in range(1, 40001):
 
     # Calculate the result of the math operation for the current number
     result = calculate_result(number)
+    
+    
+    
+    
+probabilities = []
+for number in range(1, 40001):
+    probability = calculate_probability(mean, std_dev, number)
+    probabilities.append(probability)
 
-    # Print the result
-    print(result)
+# Printing the probabilities for numbers 1 to 40000
+print("Probabilities:")
+for number, probability in enumerate(probabilities, start=1):
+    print(f"Number: {number}, Probability: {probability}, Refund {calculate_result(number)}")
+    
+    
