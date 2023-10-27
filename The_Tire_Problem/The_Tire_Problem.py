@@ -88,4 +88,4 @@ for number, probability in enumerate(probabilities, start=1):
   cost_amount = cost(number)
   total_cost += cost_amount
 
-print(total_cost)
+print(total_cost/40000)
