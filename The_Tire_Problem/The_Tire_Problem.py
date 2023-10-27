@@ -8,6 +8,7 @@ mean = 46000   # Mean life of a tire
 std_dev = 8600  # Standard Deviation of life of a tire 
 lower_bound = 0  # Minimum Miles Driven under the guarantee from the company
 upper_bound = 40000  # Maximum Miles Driven under the guarantee from the company
+details = True    # Whether or not to print the details of the program
 
 
 
@@ -59,9 +60,11 @@ def cost(number):
 
 
 # Printing for numbers 1 to 40000
-print("Probabilities:")
-for number, probability in enumerate(probabilities, start=1):
-    print(f"Number: {number}, Probability: {probability * 100}, Refund {calculate_result(number)}, Cost {cost(number)}")
+
+if details == True:
+    print("Probabilities:")
+    for number, probability in enumerate(probabilities, start=1):
+        print(f"Number: {number}, Probability: {probability * 100}, Refund {calculate_result(number)}, Cost {cost(number)}")
     
 
 
