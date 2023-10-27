@@ -4,8 +4,10 @@ from scipy.stats import norm
 
 
 # Define varibles for user to input thier needed numbers
-mean = 46000
-std_dev = 8600
+mean = 46000   # Mean life of a tire
+std_dev = 8600  # Standard Deviation of life of a tire 
+lower_bound = 0  # Minimum Miles Driven under the guarantee from the company
+upper_bound = 40000  # Maximum Miles Driven under the guarantee from the company
 
 
 
@@ -67,10 +69,52 @@ for number, probability in enumerate(probabilities, start=1):
 
 
 
-# Average cost for each tire
+# Average cost for each tire (not including the probability of when a tire will fail)
 total_cost = 0
 for number, probability in enumerate(probabilities, start=1):
   cost_amount = cost(number)
   total_cost += cost_amount
 
-print(total_cost/40000)
+average_cost_raw = total_cost/40000
+
+print("The raw average cost of a tire, when not including when the tires are likely to fail is {}".format(average_cost_raw))
+
+
+
+
+
+
+
+# Finding Area Under Normal Curve to predict the tire fail rate
+
+
+
+def find_area_under_normal_curve(mean, std_dev, lower_bound, upper_bound):
+  
+
+  # Calculate the cumulative distribution function (CDF) at the two bounds.
+  cdf_lower = norm.cdf(lower_bound, loc=mean, scale=std_dev)
+  cdf_upper = norm.cdf(upper_bound, loc=mean, scale=std_dev)
+
+  # The area under the curve between the two bounds is the difference between the two CDF values.
+  area = cdf_upper - cdf_lower
+
+  return area
+
+area = find_area_under_normal_curve(mean, std_dev, lower_bound, upper_bound)
+
+print("The area under the normal distribution curve between {} and {} is {}".format(lower_bound, upper_bound, area))
+
+
+
+
+
+
+# General Cost for the Company:
+
+general_cost = average_cost_raw * area
+
+
+
+print("The program will generally cost the company ${} for every tire sold".format(general_cost))
+
