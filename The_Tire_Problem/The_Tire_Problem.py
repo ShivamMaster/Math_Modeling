@@ -1,25 +1,6 @@
 import math
 
 def calculate_probability(mean: float, std_dev: float, number: int) -> float:
-    """
-    Calculates the probability of a number on a bell curve given the mean and standard deviation.
-
-    Parameters:
-    - mean: float
-        The mean value of the bell curve.
-    - std_dev: float
-        The standard deviation of the bell curve.
-    - number: int
-        The number for which the probability is to be calculated.
-
-    Returns:
-    - float:
-        The probability of the number on the bell curve.
-
-    Raises:
-    - ValueError:
-        Raises an error if the standard deviation is zero or negative.
-    """
 
     # Checking if the standard deviation is valid
     if std_dev <= 0:
