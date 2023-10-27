@@ -18,13 +18,6 @@ def calculate_probability(mean: float, std_dev: float, number: int) -> float:
 mean = 46000
 std_dev = 8600
 
-# # Calculating the probability for a specific number
-# number = 40000
-# probability = calculate_probability(mean, std_dev, number)
-# print(f"The probability of the number {number} on the bell curve is {probability}.")
-
-# Calculating the probabilities for numbers 1 to 40000
-
     
     
 # Refund Amount
@@ -59,10 +52,7 @@ for number, probability in enumerate(probabilities, start=1):
     
 
 # all_costs = []
-# for number, probability in enumerate(probabilities, start=1):
-#     all_costs.append(cost(number))
 
-# print("Total number of costs:", len(all_costs))
 
 total_cost = 0
 for number, probability in enumerate(probabilities, start=1):
