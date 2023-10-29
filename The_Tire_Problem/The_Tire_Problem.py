@@ -8,11 +8,11 @@ mean = 46000   # Mean life of a tire
 std_dev = 8600  # Standard Deviation of life of a tire 
 lower_bound = 0  # Minimum Miles Driven under the guarantee from the company
 upper_bound = 40000  # Maximum Miles Driven under the guarantee from the company
-details = True    # Whether or not to print the details of the program
+details = True    # Whether or not to print the details/calculations of the program
 
 
 
-# Probailities of each number:
+# Probability of each number:
 
 def calculate_probability(mean: float, std_dev: float, number: int) -> float:
 
@@ -59,6 +59,9 @@ def cost(number):
     return (probability * 100 * calculate_result(number))
 
 
+
+
+
 # Printing for numbers 1 to 40000
 
 if details == True:
@@ -79,8 +82,8 @@ for number, probability in enumerate(probabilities, start=1):
   total_cost += cost_amount
 
 average_cost_raw = total_cost/40000
-
-print("The raw average cost of a tire, when not including when the tires are likely to fail is {}".format(average_cost_raw))
+if details == True:
+    print("The raw average cost of a tire, when not including when the tires are likely to fail is {}".format(average_cost_raw))
 
 
 
@@ -89,7 +92,6 @@ print("The raw average cost of a tire, when not including when the tires are lik
 
 
 # Finding Area Under Normal Curve to predict the tire fail rate
-
 
 
 def find_area_under_normal_curve(mean, std_dev, lower_bound, upper_bound):
@@ -106,7 +108,8 @@ def find_area_under_normal_curve(mean, std_dev, lower_bound, upper_bound):
 
 area = find_area_under_normal_curve(mean, std_dev, lower_bound, upper_bound)
 
-print("The area under the normal distribution curve between {} and {} is {}".format(lower_bound, upper_bound, area))
+if details == True:
+    print("The area under the normal distribution curve between {} and {} is {}".format(lower_bound, upper_bound, area))
 
 
 
@@ -116,7 +119,6 @@ print("The area under the normal distribution curve between {} and {} is {}".for
 # General Cost for the Company:
 
 general_cost = average_cost_raw * area
-
 
 
 print("The program will generally cost the company ${} for every tire sold".format(general_cost))
