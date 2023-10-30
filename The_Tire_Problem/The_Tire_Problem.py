@@ -72,7 +72,7 @@ def cost(number):
 
 
 
-# Final/Main Printing on the Terminal (Part 1)
+# Final/Main Printing on the Terminal (Part 1):
 
 # Printing all the detail for numbers 1 to 40000
 
@@ -94,7 +94,7 @@ for number in range(1, 40001):
 
 
 
-# Final/Main Printing on the Terminal (Part 2)
+# Final/Main Printing on the Terminal (Part 2):
 
 # Print the total cost
 print("The average cost for the company is ${} per tire".format(total_cost/40000))
