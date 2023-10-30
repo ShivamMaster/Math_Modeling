@@ -41,7 +41,7 @@ for i in range(len(probabilities) - 1):
     probability_difference = probabilities[i + 1] - probabilities[i]
     probability_differences.append(probability_difference)
 
-    
+   
     
     
     
@@ -50,13 +50,13 @@ for i in range(len(probabilities) - 1):
 
 # Calulated the refund amount for each number
 def calculate_result(number):
-    return (40000 - number) * 120 / 40000
+    return ((40000 - number) * 120 / 40000)
 
 # Create a loop to iterate over the numbers from 1 to 40000
 for number in range(1, 40001):
     result = calculate_result(number)
     
-    
+
 
 
 
