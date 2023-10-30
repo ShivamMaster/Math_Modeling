@@ -3,10 +3,14 @@ import numpy as np
 from scipy.stats import norm
 
 
+
+
 # Define varibles for user to input thier needed numbers
 mean = 46000   # Mean life of a tire
 std_dev = 8600  # Standard Deviation of life of a tire 
 details = True    # Whether or not to print the details/calculations of the program
+
+
 
 
 
@@ -57,6 +61,7 @@ for number in range(1, 40001):
 
 
 
+# Cost:
 
 # Calcuating the cost for the manufactoring company (our company)
 def cost(number):
@@ -66,7 +71,10 @@ def cost(number):
 
 
 
-# Printing for numbers 1 to 40000
+
+# Final/Main Printing on the Terminal (Part 1)
+
+# Printing all the detail for numbers 1 to 40000
 
 if details == True:
     print("Probabilities:")
@@ -76,12 +84,19 @@ if details == True:
 
 
 
+
+
 # Sum all of the costs
 total_cost = 0
 for number in range(1, 40001):
     total_cost += cost(number)
 
+
+
+
+# Final/Main Printing on the Terminal (Part 2)
+
 # Print the total cost
-print("The avergae cost for the company is ${} per tire".format(total_cost/40000))
+print("The average cost for the company is ${} per tire".format(total_cost/40000))
 
 
