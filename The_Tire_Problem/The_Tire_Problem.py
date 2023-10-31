@@ -86,6 +86,9 @@ if details == True:
 
 
 
+# Final/Main Printing on the Terminal (Part 2):
+
+
 
 # Sum all of the costs
 total_cost = 0
@@ -95,10 +98,6 @@ for number in range(1, 40001):
 
 
 
-
-
-# Final/Main Printing on the Terminal (Part 2):
-
 # Print the total cost
 print("The average cost for the company is ${} per tire for a failed tire".format(total_cost/40000))
 
@@ -106,6 +105,8 @@ print("The average cost for the company is ${} per tire for a failed tire".forma
 
 
 
+
+# Final/Main Printing on the Terminal (Part 3):
 
 
 # Finding Area Under Normal Curve to predict the tire fail rate
@@ -125,19 +126,9 @@ def find_area_under_normal_curve(mean, std_dev, lower_bound, upper_bound):
 
 area = find_area_under_normal_curve(mean, std_dev, lower_bound, upper_bound)
 
-if details == True:
-    print("The area under the normal distribution curve between {} and {} is {}".format(lower_bound, upper_bound, area))
-
-
-
-
-
-
-
-# Final/Main Printing on the Terminal (Part 3):
 
 final = (total_cost/40000)*area
 
-# Print the total cost
+# Print the average cost for all tires sold
 print("The average cost for the company is ${} per tire for all tires sold".format(final))
 
