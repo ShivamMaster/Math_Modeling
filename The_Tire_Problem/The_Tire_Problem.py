@@ -95,10 +95,14 @@ for number in range(1, 40001):
 
 
 
+
+
 # Final/Main Printing on the Terminal (Part 2):
 
 # Print the total cost
 print("The average cost for the company is ${} per tire for a failed tire".format(total_cost/40000))
+
+
 
 
 
@@ -123,6 +127,8 @@ area = find_area_under_normal_curve(mean, std_dev, lower_bound, upper_bound)
 
 if details == True:
     print("The area under the normal distribution curve between {} and {} is {}".format(lower_bound, upper_bound, area))
+
+
 
 
 
