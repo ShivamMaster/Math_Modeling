@@ -65,7 +65,7 @@ if details == True:
     print("Probabilities:")
     for number, probability in enumerate(probabilities, start=1):
         print(
-            f"Number: {number}, Probability: {probability_difference}, Refund {calculate_result(number)}, Cost {cost(number)}")
+            f"Mile Number: {number}, Probability: {probability_difference}, Refund {calculate_result(number)}, Cost {cost(number)}")
 
 
 # Final/Main Printing on the Terminal (Part 2):
