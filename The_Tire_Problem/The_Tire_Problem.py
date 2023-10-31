@@ -9,7 +9,8 @@ from scipy.stats import norm
 mean = 46000   # Mean life of a tire
 std_dev = 8600  # Standard Deviation of life of a tire 
 details = True    # Whether or not to print the details/calculations of the program
-
+lower_bound = 0  # Minimum Miles Driven under the guarantee from the company
+upper_bound = 40000  # Maximum Miles Driven under the guarantee from the company
 
 
 
@@ -97,6 +98,40 @@ for number in range(1, 40001):
 # Final/Main Printing on the Terminal (Part 2):
 
 # Print the total cost
-print("The average cost for the company is ${} per tire".format(total_cost/40000))
+print("The average cost for the company is ${} per tire for a failed tire".format(total_cost/40000))
 
+
+
+
+
+# Finding Area Under Normal Curve to predict the tire fail rate
+
+
+def find_area_under_normal_curve(mean, std_dev, lower_bound, upper_bound):
+  
+
+  # Calculate the cumulative distribution function (CDF) at the two bounds.
+  cdf_lower = norm.cdf(lower_bound, loc=mean, scale=std_dev)
+  cdf_upper = norm.cdf(upper_bound, loc=mean, scale=std_dev)
+
+  # The area under the curve between the two bounds is the difference between the two CDF values.
+  area = cdf_upper - cdf_lower
+
+  return area
+
+area = find_area_under_normal_curve(mean, std_dev, lower_bound, upper_bound)
+
+if details == True:
+    print("The area under the normal distribution curve between {} and {} is {}".format(lower_bound, upper_bound, area))
+
+
+
+
+
+# Final/Main Printing on the Terminal (Part 3):
+
+final = (total_cost/40000)*area
+
+# Print the total cost
+print("The average cost for the company is ${} per tire for all tires sold".format(final))
 
