@@ -34,6 +34,12 @@ elif SamplingMethod1 in ("N", "n"):
 else:
     print ("Welp")
 
+
+
+
+
+
+
 # Random Assigns the scores of the Applicants:
 Applicant_1 = randrange(1,100)
 Applicant_2 = randrange(1,100)
@@ -55,6 +61,7 @@ Applicant_17 = randrange(1,100)
 Applicant_18 = randrange(1,100)
 Applicant_19 = randrange(1,100)
 Applicant_20 = randrange(1,100)
+
 
 
 
@@ -82,6 +89,8 @@ print("Applicant 19's score is:", Applicant_19)
 print("Applicant 20's score is:", Applicant_20)
 
 
+
+
 # Method #1
 if SamplingMethod1Status == True:
     # Applicant #1's decision
@@ -89,6 +98,9 @@ if SamplingMethod1Status == True:
         print("Applicant 1 has been selected do not care about no else")
     else:
         print ("Applicant 1 has not been selected and has been reject :(")
+
+
+
 
 
 
