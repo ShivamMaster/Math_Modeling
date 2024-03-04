@@ -92,5 +92,7 @@ if SamplingMethod1Status == True:
 
 
 
-
+#Method #2
+if SamplingMethod2Status == True:
+    print ("This is a test to see if it works. I will work on this later after I finish Method #1")
 
