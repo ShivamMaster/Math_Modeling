@@ -19,13 +19,13 @@ import sys
 SamplingMethod1 = input("Would you like do use the method of selecting the first person that hits above a certain threshold? Type 'Y' for Yes and 'N' for No:   ")
 print(SamplingMethod1)
 
-if SamplingMethod1 == "Y":
+if SamplingMethod1 in ("Y", "y"):
     SamplingMethod1Status = True
     SamplingMethod1Threshold = input("What would you like the minimum threshold to be for your applicants:  ")
-elif SamplingMethod1 == "N":
+elif SamplingMethod1 in ("N", "n"):
     SamplingMethod1Status = False
     SamplingMethod2 = input("Would you like do use the method of basically auto-rejecting applicant #1 and then using stats and normal distribution curves to figure out the best applicant? Type 'Y' for Yes and 'N' for No:   ")
-    if SamplingMethod2 == "Y":
+    if SamplingMethod2 in ("Y", "y"):
         SamplingMethod2Status = True
         
     else:
