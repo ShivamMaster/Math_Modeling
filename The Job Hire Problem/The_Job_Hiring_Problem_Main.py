@@ -17,20 +17,22 @@ import sys
 # print("Hello, " + name + "! You are " + str(age) + " years old.")
 
 SamplingMethod1 = input("Would you like do use the method of selecting the first person that hits above a certain threshold? Type 'Y' for Yes and 'N' for No:   ")
+print(SamplingMethod1)
 
-if SamplingMethod1 == "Y" or "y":
+if SamplingMethod1 == "Y":
     SamplingMethod1Status = True
     SamplingMethod1Threshold = input("What would you like the minimum threshold to be for your applicants:  ")
-else:
+elif SamplingMethod1 == "N":
     SamplingMethod1Status = False
     SamplingMethod2 = input("Would you like do use the method of basically auto-rejecting applicant #1 and then using stats and normal distribution curves to figure out the best applicant? Type 'Y' for Yes and 'N' for No:   ")
-    if SamplingMethod2 == "Y" or "y":
+    if SamplingMethod2 == "Y":
         SamplingMethod2Status = True
         
     else:
         SamplingMethod2Status = False
         print("Error: You have not selected either methods. Please try again or contact Shivam regarding adding another method if you are not happy with the current 2 methods")
-     
+else:
+    print ("Welp")
 
 # Random Assigns the scores of the Applicants:
 Applicant_1 = randrange(1,100)
