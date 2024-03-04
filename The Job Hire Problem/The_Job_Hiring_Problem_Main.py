@@ -52,6 +52,10 @@ print("Applicant 18's score is:", Applicant_18)
 print("Applicant 19's score is:", Applicant_19)
 print("Applicant 20's score is:", Applicant_20)
 
-
+# Applicant #1's decision
+if Applicant_1 == 100:
+    print("Applicant 1 has been selected do not care about no else")
+else:
+    print ("Applicant 1 has not been selected and has been reject :(")
 
 
