@@ -10,12 +10,6 @@ import sys
 # In this section of the Code, Sampling Method #1 is trying to pick the best applicant based on a minimum threshold that the user wants. So it would be the first applicant that has a score greater or equal to that number will be selected
 
 
-
-# name = input("What is your name? ")
-# age = int(input("How old are you? "))  # Convert number to integer
-
-# print("Hello, " + name + "! You are " + str(age) + " years old.")
-
 SamplingMethod1 = input("Would you like do use the method of selecting the first person that hits above a certain threshold? Type 'Y' for Yes and 'N' for No:   ")
 print(SamplingMethod1)
 
@@ -94,12 +88,17 @@ print("Applicant 20's score is:", Applicant20)
 
 #Method #1
 if SamplingMethod1Status == True:
+    
+    # Method #1 of picking the best applicant
     for i in range (1,21):
         applicant_name = f"Applicant{i}"  # Construct the applicant variable name dynamically
         if int(globals()[applicant_name]) >= SamplingMethod1Threshold:  # Access the variable using its name
             print("Hire" + applicant_name)
             break
         
+    # Seeing with this trial was a success or not (First compare all of values of the applicants and in a seperate varaible see which is the best. Then compare it with the answer that the method got and then do an if for the printing the statements)
+    
+    
 
 
 
