@@ -32,7 +32,8 @@ elif SamplingMethod1 in ("N", "n"):
         SamplingMethod2Status = False
         print("Error: You have not selected either methods. Please try again or contact Shivam regarding adding another method if you are not happy with the current 2 methods")
 else:
-    print ("Welp")
+    print ("Goodbye")
+    sys.exit()
 
 
 
