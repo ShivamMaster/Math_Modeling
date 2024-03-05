@@ -91,20 +91,27 @@ print("Applicant 20's score is:", Applicant_20)
 
 
 
-# Method #1
+#Method #1
 if SamplingMethod1Status == True:
-    # Applicant #1's decision
-    if Applicant_1 == 100:
-        print("Applicant 1 has been selected do not care about no else")
-    else:
-        print ("Applicant 1 has not been selected and has been reject :(")
+    for i in range (1,20):
+        if Applicant_[i] >= SamplingMethod1Threshold:
+            break
+
+
+
+
+
+# # Method #2
+# if SamplingMethod2Status == True:
+#     # Applicant #1's decision
+#     if Applicant_1 == 100:
+#         print("Applicant 1 has been selected do not care about no else")
+#     else:
+#         print ("Applicant 1 has not been selected and has been reject :(")
 
 
 
 
 
 
-#Method #2
-if SamplingMethod2Status == True:
-    print ("This is a test to see if it works. I will work on this later after I finish Method #1")
 
