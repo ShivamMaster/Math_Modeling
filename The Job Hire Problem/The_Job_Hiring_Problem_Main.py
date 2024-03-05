@@ -119,3 +119,13 @@ if SamplingMethod1Status == True:
 
 
 
+# Todo: 
+# 1. Add a seqeunce that verifies whether the applicant that was selected was the best applicant in the batch
+# 2. With the part of the code that asks the user what method they want to use, maybe shorten the decision a little or maybe put some of the description in the comments. Or have multiple print commands (like some with the decription and then it was straight up ask which method they want)
+# 3. Start working on the second method of sampling
+# 4. Get it to loop through mutiple trials (we can ask the user how many trials that they want to run)
+# 5. Record each trial data and have it spit it out and calcuate the sucess rate
+# 6. Add an option that will ask the user if they want to see the applicant's scores for each trial 
+
+
+
