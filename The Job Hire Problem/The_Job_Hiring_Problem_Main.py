@@ -120,12 +120,7 @@ if SamplingMethod1Status == True:
 
 # Method #2
 if SamplingMethod2Status == True:
-    # Applicant #1's decision
-    # if Applicant1 == 100:
-    #     print("Applicant 1 has been selected do not care about no else")
-    # else:
-    #     print ("Applicant 1 has not been selected and has been reject :(")
-    
+   
     for k in range (1,6):
          applicant_name3 = f"Applicant{k}"  # Construct the applicant variable name dynamically
          if int(globals()[applicant_name3]) == 100:
