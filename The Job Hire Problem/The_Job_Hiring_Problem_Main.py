@@ -94,15 +94,16 @@ if SamplingMethod1Status == True:
         applicant_name = f"Applicant{i}"  # Construct the applicant variable name dynamically
         if int(globals()[applicant_name]) >= SamplingMethod1Threshold:  # Access the variable using its name
             print("According to this way of finding the applicant, we should hire " + applicant_name)
-            break
             predicted_best_applicant = applicant_name
+            break
+            
 
     highest_actual_score = max({Applicant1, Applicant2, Applicant3, Applicant4, Applicant5, Applicant6, Applicant7, Applicant8, Applicant9, Applicant10, Applicant11, Applicant12, Applicant13, Applicant14, Applicant15, Applicant16, Applicant17, Applicant18, Applicant19, Applicant20})
     print (highest_actual_score)
     for j in range (1,21):
         applicant_name = f"Applicant{j}"  # Construct the applicant variable name dynamically
         if int(globals()[applicant_name]) >= highest_actual_score:  # Access the variable using its name
-            print("The applicant to hire was " + applicant_name)
+            print("The best applicant to hire was " + applicant_name)
             actual_best_applicant = applicant_name
     
     if actual_best_applicant == predicted_best_applicant:
