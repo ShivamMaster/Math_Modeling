@@ -3,6 +3,7 @@ from random import randrange
 import numpy as np
 from scipy.stats import norm
 import sys
+import statistics
 
 
 
@@ -134,6 +135,15 @@ if SamplingMethod2Status == True:
              print (applicant_name3 + "has been rejected")
 
 
+
+    # Defining various data points for making a custom CDF curve
+    mean = statistics.mean({Applicant1, Applicant2, Applicant3, Applicant4, Applicant5})
+    standard_deviation = statistics.stdev({Applicant1, Applicant2, Applicant3, Applicant4, Applicant5})
+    lower_bound = 0
+    upper_bound = 100
+    
+    print(mean)
+    print (standard_deviation)
 
 
 
