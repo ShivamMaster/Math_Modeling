@@ -137,8 +137,8 @@ if SamplingMethod2Status == True:
     lower_bound = 0
     upper_bound = 100
     
-    print(mean)
-    print (standard_deviation)
+    print("The mean of the first 5 applicants is " + mean)
+    print ("The standard deviation of the first 5 applicants is " + standard_deviation)
 
 
 
