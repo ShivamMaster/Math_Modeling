@@ -91,42 +91,47 @@ if SamplingMethod1Status == True:
     
     # Method #1 of picking the best applicant
     for i in range (1,21):
-        applicant_name = f"Applicant{i}"  # Construct the applicant variable name dynamically
-        if int(globals()[applicant_name]) >= SamplingMethod1Threshold:  # Access the variable using its name
-            print("According to this way of finding the applicant, we should hire " + applicant_name)
-            predicted_best_applicant = applicant_name
+        applicant_name1 = f"Applicant{i}"  # Construct the applicant variable name dynamically
+        if int(globals()[applicant_name1]) >= SamplingMethod1Threshold:  # Access the variable using its name
+            print("According to this way of finding the applicant, we should hire " + applicant_name1)
+            predicted_best_applicant = applicant_name1
             break
             
 
     highest_actual_score = max({Applicant1, Applicant2, Applicant3, Applicant4, Applicant5, Applicant6, Applicant7, Applicant8, Applicant9, Applicant10, Applicant11, Applicant12, Applicant13, Applicant14, Applicant15, Applicant16, Applicant17, Applicant18, Applicant19, Applicant20})
     print (highest_actual_score)
     for j in range (1,21):
-        applicant_name = f"Applicant{j}"  # Construct the applicant variable name dynamically
-        if int(globals()[applicant_name]) >= highest_actual_score:  # Access the variable using its name
-            print("The best applicant to hire was " + applicant_name)
-            actual_best_applicant = applicant_name
+        applicant_name2 = f"Applicant{j}"  # Construct the applicant variable name dynamically
+        if int(globals()[applicant_name2]) >= highest_actual_score:  # Access the variable using its name
+            print("The best applicant to hire was " + applicant_name2)
+            actual_best_applicant = applicant_name2
     
     if actual_best_applicant == predicted_best_applicant:
         print ("Successful run")
     else:
         print ("Failed Run")
     
-
-    # Seeing with this trial was a success or not (First compare all of values of the applicants and in a seperate varaible see which is the best. Then compare it with the answer that the method got and then do an if for the printing the statements)
-    
     
 
 
 
 
 
-# # Method #2
-# if SamplingMethod2Status == True:
-#     # Applicant #1's decision
-#     if Applicant_1 == 100:
-#         print("Applicant 1 has been selected do not care about no else")
-#     else:
-#         print ("Applicant 1 has not been selected and has been reject :(")
+# Method #2
+if SamplingMethod2Status == True:
+    # Applicant #1's decision
+    # if Applicant1 == 100:
+    #     print("Applicant 1 has been selected do not care about no else")
+    # else:
+    #     print ("Applicant 1 has not been selected and has been reject :(")
+    
+    for k in range (1,6):
+         applicant_name3 = f"Applicant{k}"  # Construct the applicant variable name dynamically
+         if int(globals()[applicant_name3]) == 100:
+             print("Immediately hire " + applicant_name3)
+             break
+         else:
+             print (applicant_name3 + "has been rejected")
 
 
 
