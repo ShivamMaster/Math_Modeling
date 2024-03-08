@@ -93,7 +93,7 @@ if SamplingMethod1Status == True:
     for i in range (1,21):
         applicant_name = f"Applicant{i}"  # Construct the applicant variable name dynamically
         if int(globals()[applicant_name]) >= SamplingMethod1Threshold:  # Access the variable using its name
-            print("Hire" + applicant_name)
+            print("Hire " + applicant_name)
             break
         
     # Seeing with this trial was a success or not (First compare all of values of the applicants and in a seperate varaible see which is the best. Then compare it with the answer that the method got and then do an if for the printing the statements)
