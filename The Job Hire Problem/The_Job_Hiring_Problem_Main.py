@@ -95,7 +95,10 @@ if SamplingMethod1Status == True:
         if int(globals()[applicant_name]) >= SamplingMethod1Threshold:  # Access the variable using its name
             print("Hire " + applicant_name)
             break
-        
+
+    highest_actual_score = max({Applicant1, Applicant2, Applicant3, Applicant4, Applicant5, Applicant6, Applicant7, Applicant8, Applicant9, Applicant10, Applicant11, Applicant12, Applicant13, Applicant14, Applicant15, Applicant16, Applicant17, Applicant18, Applicant19, Applicant20})
+    print (highest_actual_score)
+
     # Seeing with this trial was a success or not (First compare all of values of the applicants and in a seperate varaible see which is the best. Then compare it with the answer that the method got and then do an if for the printing the statements)
     
     
