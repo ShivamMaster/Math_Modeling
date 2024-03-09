@@ -16,12 +16,14 @@ print(SamplingMethod1)
 
 if SamplingMethod1 in ("Y", "y"):
     SamplingMethod1Status = True
+    SamplingMethod2Status = False
     SamplingMethod1Threshold = int(input("What would you like the minimum threshold to be for your applicants:  "))
 elif SamplingMethod1 in ("N", "n"):
     SamplingMethod1Status = False
-    SamplingMethod2 = input("Would you like do use the method of basically auto-rejecting applicant #1 and then using stats and normal distribution curves to figure out the best applicant? Type 'Y' for Yes and 'N' for No:   ")
+    SamplingMethod2 = input("Would you like do use the method of basically auto-rejecting applicant #1,2,3,4,5 and then using stats and normal distribution curves to figure out the best applicant? Type 'Y' for Yes and 'N' for No:   ")
     if SamplingMethod2 in ("Y", "y"):
         SamplingMethod2Status = True
+        SamplingMethod1Status = False
         
     else:
         SamplingMethod2Status = False
@@ -31,6 +33,15 @@ else:
     sys.exit()
 
 
+RunLoop = input ("How many times would you like to run the program?  ")
+print(RunLoop)
+
+
+Details = input("Would you like to see the details of the program? Type 'Y' for Yes and 'N' for No:   ")
+if Details in ("Y", "y"):
+    DetailsStatus = True
+elif Details in ("N", "n"):
+    DetailsStatus = False
 
 
 
@@ -63,26 +74,27 @@ Applicant20 = randrange(1,100)
 
 
 # Printed the Applicant's scores to make it easier to track
-print("Applicant 1's score is:", Applicant1)
-print("Applicant 2's score is:", Applicant2)
-print("Applicant 3's score is:", Applicant3)  
-print("Applicant 4's score is:", Applicant4)
-print("Applicant 5's score is:", Applicant5)
-print("Applicant 6's score is:", Applicant6)
-print("Applicant 7's score is:", Applicant7)
-print("Applicant 8's score is:", Applicant8)
-print("Applicant 9's score is:", Applicant9)  
-print("Applicant 10's score is:", Applicant10)
-print("Applicant 11's score is:", Applicant11)
-print("Applicant 12's score is:", Applicant12)
-print("Applicant 13's score is:", Applicant13)
-print("Applicant 14's score is:", Applicant14)
-print("Applicant 15's score is:", Applicant15)  
-print("Applicant 16's score is:", Applicant16)
-print("Applicant 17's score is:", Applicant17)
-print("Applicant 18's score is:", Applicant18)
-print("Applicant 19's score is:", Applicant19)
-print("Applicant 20's score is:", Applicant20)
+if DetailsStatus == True:
+    print("Applicant 1's score is:", Applicant1)
+    print("Applicant 2's score is:", Applicant2)
+    print("Applicant 3's score is:", Applicant3)  
+    print("Applicant 4's score is:", Applicant4)
+    print("Applicant 5's score is:", Applicant5)
+    print("Applicant 6's score is:", Applicant6)
+    print("Applicant 7's score is:", Applicant7)
+    print("Applicant 8's score is:", Applicant8)
+    print("Applicant 9's score is:", Applicant9)  
+    print("Applicant 10's score is:", Applicant10)
+    print("Applicant 11's score is:", Applicant11)
+    print("Applicant 12's score is:", Applicant12)
+    print("Applicant 13's score is:", Applicant13)
+    print("Applicant 14's score is:", Applicant14)
+    print("Applicant 15's score is:", Applicant15)  
+    print("Applicant 16's score is:", Applicant16)
+    print("Applicant 17's score is:", Applicant17)
+    print("Applicant 18's score is:", Applicant18)
+    print("Applicant 19's score is:", Applicant19)
+    print("Applicant 20's score is:", Applicant20)
 
 
 
@@ -100,7 +112,7 @@ if SamplingMethod1Status == True:
             
 
     highest_actual_score = max({Applicant1, Applicant2, Applicant3, Applicant4, Applicant5, Applicant6, Applicant7, Applicant8, Applicant9, Applicant10, Applicant11, Applicant12, Applicant13, Applicant14, Applicant15, Applicant16, Applicant17, Applicant18, Applicant19, Applicant20})
-    print (highest_actual_score)
+    print ("The highest actual score for the applicants was "+highest_actual_score)
     for j in range (1,21):
         applicant_name2 = f"Applicant{j}"  # Construct the applicant variable name dynamically
         if int(globals()[applicant_name2]) >= highest_actual_score:  # Access the variable using its name
@@ -108,9 +120,9 @@ if SamplingMethod1Status == True:
             actual_best_applicant = applicant_name2
     
     if actual_best_applicant == predicted_best_applicant:
-        print ("Successful run")
+        print ("This was a Successful run")
     else:
-        print ("Failed Run")
+        print ("This was a Failed Run")
     
     
 
@@ -127,7 +139,8 @@ if SamplingMethod2Status == True:
              print("Immediately hire " + applicant_name3)
              break
          else:
-             print (applicant_name3 + "has been rejected")
+             if DetailsStatus == True:
+                print (applicant_name3 + "has been rejected")
 
 
 
@@ -137,8 +150,9 @@ if SamplingMethod2Status == True:
     lower_bound = 0
     upper_bound = 100
     
-    print("The mean of the first 5 applicants is ", str(mean))
-    print ("The standard deviation of the first 5 applicants is ", str(standard_deviation))
+    if DetailsStatus == True:
+        print("The mean of the first 5 applicants is ", str(mean))
+        print ("The standard deviation of the first 5 applicants is ", str(standard_deviation))
 
 
     # THE CURVE/Probilities
@@ -158,7 +172,8 @@ if SamplingMethod2Status == True:
             min(range(len(x)), key=lambda i: abs(x[i] - applicant_score4))
         )
         area = cdf[score_index]  # Area under the curve is the CDF value at the index
-        print(f"Applicant {i}'s score: {applicant_score4}, Area under the curve: {area:.4f}")
+        if DetailsStatus == True:
+            print(f"Applicant {i}'s score: {applicant_score4}, Area under the curve: {area:.4f}")
         if area >= (standard_deviation + mean)/100:
             print ("Hire this applicant" + f"Applicant{i}")
             predicted_best_applicant = f"Applicant{i}"
