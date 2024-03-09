@@ -1,0 +1,13 @@
+Method #1 (Run #1) - 1 Million Records
+
+    Successful - 482079 Records
+    Failed - 517921 Records
+
+    Successful % = (482079/1000000) * 100 = 48.2079%
+
+Method #2 (Run #1) - 351338 Records
+
+    Successful - 0 Records
+    Failed - 351338 Records
+
+    Successful % = (0/1000000) * 100 = 0%
