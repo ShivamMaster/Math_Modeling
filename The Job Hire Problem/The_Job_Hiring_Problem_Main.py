@@ -158,7 +158,7 @@ for trial in range (int(RunLoop)):
         # THE CURVE/Probilities
 
         # Create the x-values for the CDF curve
-        num_points = 100000  # Number of points to use for the curve
+        num_points = 1000  # Number of points to use for the curve
         x = [i * (upper_bound - lower_bound) / (num_points - 1) for i in range(num_points)]
 
         # Create the CDF curve using norm.cdf
