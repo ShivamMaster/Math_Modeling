@@ -137,10 +137,28 @@ if SamplingMethod2Status == True:
     lower_bound = 0
     upper_bound = 100
     
-    print("The mean of the first 5 applicants is " + mean)
-    print ("The standard deviation of the first 5 applicants is " + standard_deviation)
+    print("The mean of the first 5 applicants is ", str(mean))
+    print ("The standard deviation of the first 5 applicants is ", str(standard_deviation))
 
 
+    # THE CURVE/Probilities
+
+    # Create the x-values for the CDF curve
+    num_points = 1000
+    x = [i * (upper_bound - lower_bound) / (num_points - 1) for i in range(num_points)]
+
+    # Create the CDF curve using norm.cdf
+    cdf = [norm.cdf(value, loc=mean, scale=standard_deviation) for value in x]
+
+    # Loop through applicants 6 to 20 and calculate their area under the curve
+    for i in range(6, 21):
+        applicant_score4 = int(globals()[f"Applicant{i}"])
+        # Find the index in x corresponding to the score (linear search)
+        score_index = (
+            min(range(len(x)), key=lambda i: abs(x[i] - applicant_score4))
+        )
+        area = cdf[score_index]  # Area under the curve is the CDF value at the index
+        print(f"Applicant {i}'s score: {applicant_score4}, Area under the curve: {area:.4f}")
 
 
 
