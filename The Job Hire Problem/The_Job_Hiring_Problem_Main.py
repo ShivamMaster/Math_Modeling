@@ -159,6 +159,12 @@ if SamplingMethod2Status == True:
         )
         area = cdf[score_index]  # Area under the curve is the CDF value at the index
         print(f"Applicant {i}'s score: {applicant_score4}, Area under the curve: {area:.4f}")
+        if area >= (standard_deviation + mean)/100:
+            print ("Hire this applicant" + f"Applicant{i}")
+            break
+        
+    
+    
 
 
 
