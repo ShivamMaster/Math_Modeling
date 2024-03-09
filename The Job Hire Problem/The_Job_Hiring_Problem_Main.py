@@ -161,7 +161,21 @@ if SamplingMethod2Status == True:
         print(f"Applicant {i}'s score: {applicant_score4}, Area under the curve: {area:.4f}")
         if area >= (standard_deviation + mean)/100:
             print ("Hire this applicant" + f"Applicant{i}")
+            predicted_best_applicant = f"Applicant{i}"
             break
+        
+    highest_actual_score = max({Applicant1, Applicant2, Applicant3, Applicant4, Applicant5, Applicant6, Applicant7, Applicant8, Applicant9, Applicant10, Applicant11, Applicant12, Applicant13, Applicant14, Applicant15, Applicant16, Applicant17, Applicant18, Applicant19, Applicant20})
+    print (highest_actual_score)
+    for j in range (1,21):
+        applicant_name2 = f"Applicant{j}"  # Construct the applicant variable name dynamically
+        if int(globals()[applicant_name2]) >= highest_actual_score:  # Access the variable using its name
+            print("The best applicant to hire was " + applicant_name2)
+            actual_best_applicant = applicant_name2
+    
+    if actual_best_applicant == predicted_best_applicant:
+        print ("Successful run")
+    else:
+        print ("Failed Run")
         
     
     
