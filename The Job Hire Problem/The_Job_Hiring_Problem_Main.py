@@ -10,8 +10,11 @@ import statistics
 #Asks the user what method random sampling that they would like (select the first person that hit above a certain threshold or use the standard deviation and predict which on is the best based on probabilities)
 # In this section of the Code, Sampling Method #1 is trying to pick the best applicant based on a minimum threshold that the user wants. So it would be the first applicant that has a score greater or equal to that number will be selected
 
-
-SamplingMethod1 = input("Would you like do use the method of selecting the first person that hits above a certain threshold? Type 'Y' for Yes and 'N' for No:   ")
+print("Welcome to the Job Hiring Problem Program")
+print("This program will help you decide which applicant to hire based on the scores that they have received")
+print("Method 1: Select the first person that hits above a certain threshold")
+print("Method 2: Use stats and normal distribution curves to figure out the best applicant")
+SamplingMethod1 = input("Would you like do use Method 1? Type 'Y' for Yes and 'N' for No:   ")
 print(SamplingMethod1)
 
 if SamplingMethod1 in ("Y", "y"):
@@ -20,7 +23,7 @@ if SamplingMethod1 in ("Y", "y"):
     SamplingMethod1Threshold = int(input("What would you like the minimum threshold to be for your applicants:  "))
 elif SamplingMethod1 in ("N", "n"):
     SamplingMethod1Status = False
-    SamplingMethod2 = input("Would you like do use the method of basically auto-rejecting applicant #1,2,3,4,5 and then using stats and normal distribution curves to figure out the best applicant? Type 'Y' for Yes and 'N' for No:   ")
+    SamplingMethod2 = input("Would you like do use Method 2? Type 'Y' for Yes and 'N' for No:   ")
     if SamplingMethod2 in ("Y", "y"):
         SamplingMethod2Status = True
         SamplingMethod1Status = False
