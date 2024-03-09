@@ -182,7 +182,7 @@ for trial in range (int(RunLoop)):
 
             
         highest_actual_score = max({Applicant1, Applicant2, Applicant3, Applicant4, Applicant5, Applicant6, Applicant7, Applicant8, Applicant9, Applicant10, Applicant11, Applicant12, Applicant13, Applicant14, Applicant15, Applicant16, Applicant17, Applicant18, Applicant19, Applicant20})
-        print (highest_actual_score)
+        print ("The highest actual score for the applicants was ", str(highest_actual_score))
         predicted_best_applicant5 = None
         for j in range (1,21):
             applicant_name2 = f"Applicant{j}"  # Construct the applicant variable name dynamically
@@ -191,9 +191,9 @@ for trial in range (int(RunLoop)):
                 actual_best_applicant = applicant_name2
         
         if actual_best_applicant == predicted_best_applicant5:
-            print ("Successful run")
+            print ("This was a Successful run")
         else:
-            print ("Failed Run")
+            print ("This was a Failed Run")
             
         
         
