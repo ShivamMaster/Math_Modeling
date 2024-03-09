@@ -203,13 +203,5 @@ for trial in range (int(RunLoop)):
 
 
 
-# Todo: 
-
-# 2. With the part of the code that asks the user what method they want to use, maybe shorten the decision a little or maybe put some of the description in the comments. Or have multiple print commands (like some with the decription and then it was straight up ask which method they want)
-
-
-# 5. Record each trial data and have it spit it out and calcuate the sucess rate
-
-
 
 
