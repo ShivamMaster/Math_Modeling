@@ -46,6 +46,11 @@ else:
 # Handle sequences with potentially different lengths for target labels
 y_train = np.array([seq[11] if len(seq) > 11 else None for seq in training_data])  # Target labels
 
+# Filter out sequences with missing targets (modify conditions as needed)
+filtered_indices = [i for i, label in enumerate(y_train) if label is not None]
+x_train = x_train[filtered_indices]
+y_train = y_train[filtered_indices]
+
 # Train the model on the prepared data
 model.fit(x_train, y_train, epochs=10)
 
@@ -72,7 +77,4 @@ def test_sequence():
     sequence.append(actual_num)
 
   success_rate = correct / 10
-  print(f"Success Rate: {success_rate:.2f}")
-
-# Run the test loop
-test_sequence()
+  print(success_rate)
