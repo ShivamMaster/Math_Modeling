@@ -1,5 +1,9 @@
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import LSTM, Dense
+import tensorflow as tf
+import keras
+from keras import layers
+
+# from tensorflow.keras.models import Sequential
+# from tensorflow.keras.layers import LSTM, Dense
 import numpy as np
 
 # Training data
