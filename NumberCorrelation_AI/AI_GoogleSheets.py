@@ -7,7 +7,7 @@ from keras import layers
 import numpy as np
 
 # Training data
-training_data = []
+training_data = [[7,8,9,5,6,4,1,4,3,2,2,0,0,8,0,4,8,4,0,6,8]]
 
 # Function to add a sequence to training data
 def add_sequence(sequence):
@@ -24,11 +24,18 @@ def to_model_input(sequence):
   return np.array([encoded_sequence])
 
 # Define and train the model
-model = Sequential()
-model.add(LSTM(128, return_sequences=True, input_shape=(11, 10)))
-model.add(LSTM(64))
-model.add(Dense(10, activation='softmax'))
-model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
+# model = Sequential()
+# model.add(LSTM(128, return_sequences=True, input_shape=(11, 10)))
+# model.add(LSTM(64))
+# model.add(Dense(10, activation='softmax'))
+# model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
+
+model = tf.keras.Sequential([
+    tf.keras.layers.LSTM(128, return_sequences=True, input_shape=(11, 10)),
+    tf.keras.layers.LSTM(64),
+    tf.keras.layers.Dense(10, activation='softmax')
+])
+
 
 # Add your training data here (call add_sequence multiple times)
 # ... (replace with your training data)
