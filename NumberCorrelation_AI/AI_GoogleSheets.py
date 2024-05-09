@@ -1,17 +1,14 @@
-import tensorflow as tf
-import keras
-from keras import layers
-
-# from tensorflow.keras.models import Sequential
-# from tensorflow.keras.layers import LSTM, Dense
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import LSTM, Dense
 import numpy as np
 
 # Training data
 training_data = [[7,8,9,5,6,4,1,4,3,2,2,0,0,8,0,4,8,4,0,6,8]]
 
-# Function to add a sequence to training data
+# Function to add a sequence to training data (not used in this example)
 def add_sequence(sequence):
-  training_data.append(sequence)
+  # This function is no longer used since we're providing data directly
+  pass
 
 # Function to convert sequence to model input format
 def to_model_input(sequence):
@@ -23,22 +20,15 @@ def to_model_input(sequence):
     encoded_sequence.append(one_hot)
   return np.array([encoded_sequence])
 
-# Define and train the model
-# model = Sequential()
-# model.add(LSTM(128, return_sequences=True, input_shape=(11, 10)))
-# model.add(LSTM(64))
-# model.add(Dense(10, activation='softmax'))
-# model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
-
-model = tf.keras.Sequential([
-    tf.keras.layers.LSTM(128, return_sequences=True, input_shape=(11, 10)),
-    tf.keras.layers.LSTM(64),
-    tf.keras.layers.Dense(10, activation='softmax')
+# Define the model (consider using Input layer for better practice)
+model = Sequential([
+    LSTM(128, return_sequences=True, input_shape=(11, 10)),  # Or use Input layer here
+    LSTM(64),
+    Dense(10, activation='softmax')
 ])
 
-
-# Add your training data here (call add_sequence multiple times)
-# ... (replace with your training data)
+# Compile the model before training (critical step)
+model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 
 # Train the model on the provided data
 model.fit(np.array([seq[:11] for seq in training_data]), np.array([seq[11] for seq in training_data]), epochs=10)
